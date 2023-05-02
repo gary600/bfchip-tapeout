@@ -24,20 +24,19 @@ jobs:
 
     # install sv2v
     - name: install sv2v
-      runs: |
+      run: |
         cd $HOME
         wget https://github.com/zachjs/sv2v/releases/download/v0.0.10/sv2v-Linux.zip
         unzip sv2v-Linux.zip
 
     # generate final chip.sv file from source
     - name: generate chip.sv
-      runs: |
+      run: |
         cd dev
         make SV2V="$HOME/sv2v-Linux/sv2v" chip
         cp build/chip.v ../src/chip.sv
 
     # build PDK and fetch OpenLane
-
     - name: pdk & caravel
       run: |
         cd $HOME
