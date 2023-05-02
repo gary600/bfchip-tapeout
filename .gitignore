@@ -2,3 +2,9 @@
 .idea
 .vscode
 *.vcd
+
+dev/build/
+__pycache__/
+
+# Overwritten by build
+src/chip.sv
